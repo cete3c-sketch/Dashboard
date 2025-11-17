@@ -1,0 +1,189 @@
+/* --- General & Theme Setup --- */
+:root {
+    /* Define AKU-inspired colors */
+    --color-primary-green: #00704A; /* Deep, professional green */
+    --color-secondary-green: #00935D; /* Slightly brighter green for accents */
+    --color-light-green: #E0F2E9;  /* Very light green for subtle backgrounds/borders */
+    --color-white: #ffffff;
+    --color-text-dark: #2c2c2c; /* Slightly darker text for contrast */
+    --color-text-light: #666666;
+    --color-shadow-subtle: rgba(0, 0, 0, 0.08); /* Lighter shadow */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f8f8; /* Off-white body background for depth */
+    color: var(--color-text-dark);
+    line-height: 1.6;
+}
+
+/* --- Header Styling (Refined) --- */
+.header {
+    background-color: var(--color-primary-green);
+    color: var(--color-white);
+    padding: 25px 30px; /* Slightly increased padding */
+    box-shadow: 0 3px 10px var(--color-shadow-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+}
+
+.logo-container {
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.aku-logo {
+    height: 65px; /* Slightly adjusted size */
+    width: auto;
+    /* Optional: Add a subtle border for emphasis against the green header */
+    border-radius: 4px;
+}
+
+.header-content {
+    text-align: center;
+    flex-grow: 1; 
+    margin: 0 120px; /* Ensures text doesn't overlap logo on medium screens */
+}
+
+.header-content h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.header-content p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* --- Dashboard Layout --- */
+.dashboard-container {
+    max-width: 1300px; /* Increased width for more room */
+    margin: 50px auto;
+    padding: 0 30px; /* Increased horizontal padding */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    gap: 35px; /* Increased gap */
+}
+
+/* --- Project Card Styling (Clean and Modern) --- */
+.project-card {
+    background-color: var(--color-white); /* White background for a professional look */
+    border: 1px solid var(--color-light-green); 
+    padding: 30px;
+    border-radius: 8px; /* Slightly softer corners */
+    box-shadow: 0 6px 15px var(--color-shadow-subtle); /* Improved shadow */
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex; /* Use flex for vertical layout */
+    flex-direction: column;
+    justify-content: space-between; /* Pushes the button to the bottom */
+}
+
+.project-card:hover {
+    transform: translateY(-7px); /* More noticeable lift effect */
+    box-shadow: 0 12px 25px rgba(0, 112, 74, 0.15); /* More distinct green hover shadow */
+}
+
+.project-title {
+    color: var(--color-primary-green);
+    margin-bottom: 12px;
+    font-size: 1.6rem;
+    /* Use a light accent line instead of a heavy border */
+    border-left: 5px solid var(--color-secondary-green);
+    padding-left: 15px; 
+    line-height: 1.2;
+}
+
+.project-description {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    color: var(--color-text-light);
+    flex-grow: 1; /* Allows the description to take up available space */
+}
+
+/* --- Status Badge Styling (New Feature) --- */
+.project-status {
+    display: inline-block;
+    background-color: var(--color-light-green); /* Light green background */
+    color: var(--color-primary-green); /* Green text */
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* --- Link/Button Styling --- */
+.project-link {
+    display: block; /* Make the button full width of the card */
+    width: 100%;
+    text-align: center;
+    background-color: var(--color-secondary-green);
+    color: var(--color-white);
+    text-decoration: none;
+    padding: 14px 25px; /* Slightly larger button */
+    border-radius: 6px;
+    font-weight: 700;
+    transition: background-color 0.3s, transform 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.project-link:hover {
+    background-color: var(--color-primary-green);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+.link-icon {
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+/* --- Footer Styling --- */
+.footer {
+    text-align: center;
+    padding: 25px;
+    background-color: var(--color-light-green); /* Use the light green accent here */
+    color: var(--color-text-dark);
+    border-top: 1px solid #c7e1d5;
+    margin-top: 60px;
+    font-size: 0.95rem;
+}
+
+/* --- Responsive Adjustments (Keep these for stability) --- */
+@media (max-width: 1000px) {
+    .header {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .logo-container {
+        position: static;
+        transform: none;
+        margin-bottom: 10px;
+    }
+    .header-content {
+        margin: 0;
+    }
+}
+@media (max-width: 600px) {
+    .dashboard-container {
+        grid-template-columns: 1fr; 
+        gap: 25px;
+        padding: 0 15px;
+    }
+}
